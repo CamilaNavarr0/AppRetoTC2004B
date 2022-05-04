@@ -1,0 +1,108 @@
+<html>
+	<head>
+	<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+		<title>Seleccion de Personal Destacado - Ternium</title>
+	</head>
+	<body>
+	<!-- Java Script -->	
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+		
+		<!-- Navbar-->
+		<nav class="navbar navbar-dark bg-dark">
+			<span class="navbar-brand mb-0 h1">Seleccion de Personal Ternium</span>
+		</nav>
+		<div class="container">
+			<br>
+			<!--Form-->
+			<form action = "{{url_for('predict')}}" method ="POST" >
+				<fieldset>
+				<legend>Forma de Evaluacion de Perfil de Candidato</legend><br>
+				  <div class="card card-body" >
+					  <div class="form-group  row">
+						<div class="col-sm-3">
+							<label for="perfil">Perfil Pymetrics</label>
+							<input type="number" class="form-control" id="perfil" name="perfil" required>
+						</div>
+						<div class="col-sm-3">
+							<label for="recomendado">Altamente Recomendado</label>
+							<input type="number" class="form-control" id="recomendado" name="recomendado" required>
+					   </div>
+					  </div>
+					  <br>
+					  <div class="form-group  row">
+						  <div class="col-sm">
+							<label for="opcalidad">Operaciones-Calidad</label>
+							<input type="number" class="form-control" id="opcalidad" name="opcalidad" required>
+						  </div>
+						  <div class="col-sm">
+							<label for="mtto">MTTO-DIMA</label>
+							<input type="number" class="form-control" id="mtto" name="mtto"  required>
+						  </div>
+						  <div class="col-sm">
+							<label for="comercial">Comercial-Planteamiento</label>
+							<input type="number" class="form-control" id="comercial" name="comercial" required>
+						  </div>
+						  <div class="col-sm">
+							<label for="digi">DIGI-SC</label>
+							<input type="number" class="form-control" id="digi" name="digi" required>
+						</div>
+					  </div>
+					  
+					  <br>
+					  <div class="form-group row">
+							<div class="col-sm">
+								<label for="resto">Resto-Soft</label>
+								<input type="number" class="form-control" id="resto" name="resto" required>
+							  </div>
+							  <div class="col-sm">
+								<label for="grupal1">Actividad Grupal 1</label>
+								<input type="number" class="form-control" id="grupal1" name="grupal1" required>
+							  </div>
+							  <div class="col-sm">
+								<label for="aptoag">Apto AG</label>
+								<input type="number" class="form-control" id="aptoag" name="aptoag" required>
+							  </div>
+							  <div class="col-sm">
+								<label for="ingles">Ingles</label>
+								<input type="number" class="form-control" id="ingles" name="ingles" required>
+							  </div>
+						  </div>
+						  <br>
+						  <div class="form-group  row">
+						  <div class="col-sm">
+							<label for="apto">Apto</label>
+							<input type="number" class="form-control" id="apto" name="apto" required>
+						  </div>
+						  <div class="col-sm">
+							<label for="destacado">Destacado</label>
+							<input type="number" class="form-control" id="destacado" name="destacado" required>
+						  </div>
+						  <div class="col-sm">
+							<label for="destacado_pym">Destacado Pym</label>
+							<input type="number" class="form-control" id="destacado_pym" name="destacado_pym" required>
+						  </div>
+					  </div>
+					  <br>
+					  <div class="form-group">
+						<input class="btn btn-primary" type="submit" value="Result">
+					  </div>
+					  
+					  <!--Prediction Result-->
+					  <div id ="result">
+							<strong style="color:red">{{result}}</strong>
+					 </div>
+				     </div>
+			 </fieldset>
+			</form>
+			
+		</div>
+		
+	</body>
+</html>
