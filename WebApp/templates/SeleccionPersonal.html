@@ -15,88 +15,167 @@
 
 		
 		<!-- Navbar-->
-		<nav class="navbar navbar-dark bg-dark">
-			<span class="navbar-brand mb-0 h1">Seleccion de Personal Ternium</span>
+		<nav class="navbar navbar-dark" style = "background-color: #FF6347;">
+			<span class="navbar-brand mb-0 h0">Selección de Personal Ternium</span>
 		</nav>
 		<div class="container">
 			<br>
 			<!--Form-->
 			<form action = "{{url_for('predict')}}" method ="POST" >
 				<fieldset>
-				<legend>Forma de Evaluacion de Perfil de Candidato</legend><br>
+				<legend>Forma de Evaluación de Perfil de Candidato</legend><br>
 				  <div class="card card-body" >
 					  <div class="form-group  row">
 						<div class="col-sm-3">
-							<label for="perfil">Perfil Pymetrics</label>
-							<input type="number" class="form-control" id="perfil" name="perfil" required>
+							<label for="perfil">Resultado de Perfil Pymetrics</label>
+							<select class="form-control" id="perfil"  name="perfil" required>
+								<option disabled selected value> Selecciona una Opción </option>
+								<option value = "0">0</option>
+								<option value = "1">1</option>
+								<option value = "2">2</option>
+								<option value = "3">3</option>
+								<option value = "4">4</option>
+								<option value = "5">5</option>
+								<option value = "6">6</option>
+								<option value = "7">7</option>
+								<option value = "8">8</option>
+								<option value = "9">9</option>
+								<option value = "10">10</option>
+							</select>
 						</div>
 						<div class="col-sm-3">
-							<label for="recomendado">Altamente Recomendado</label>
-							<input type="number" class="form-control" id="recomendado" name="recomendado" required>
+							<label for="recomendado">¿Es Altamente Recomendado?</label>
+							<select class="form-control" id="recomendado"  name="recomendado" required>
+								<option disabled selected value> Selecciona una Opción </option>
+								<option value = "0">No Altamente Recomendado</option>
+								<option value = "1">Altamente Recomendado</option>
+							</select>
 					   </div>
 					  </div>
 					  <br>
 					  <div class="form-group  row">
 						  <div class="col-sm">
-							<label for="opcalidad">Operaciones-Calidad</label>
-							<input type="number" class="form-control" id="opcalidad" name="opcalidad" required>
+							<label for="opcalidad">¿Es Recomendado para el Área de Operaciones-Calidad?</label>
+							<select class="form-control" id="opcalidad"  name="opcalidad" required>
+								<option disabled selected value> Selecciona una Opción </option>
+								<option value = "0">No Recomendado</option>
+								<option value = "1">Recomendado</option>
+								<option value = "2">Altamente Recomendado</option>
+
+							</select>
 						  </div>
 						  <div class="col-sm">
-							<label for="mtto">MTTO-DIMA</label>
-							<input type="number" class="form-control" id="mtto" name="mtto"  required>
+							<label for="mtto">¿Es Recomendado para el Área de MTTO-DIMA?</label>
+							<select class="form-control" id="mtto"  name="mtto" required>
+								<option disabled selected value> Selecciona una Opción </option>
+								<option value = "0">No Recomendado</option>
+								<option value = "1">Recomendado</option>
+								<option value = "2">Altamente Recomendado</option>
+
+							</select>
 						  </div>
 						  <div class="col-sm">
-							<label for="comercial">Comercial-Planteamiento</label>
-							<input type="number" class="form-control" id="comercial" name="comercial" required>
+							<label for="comercial">¿Es Recomendado para el Área de Comercial-Planteamiento?</label>
+							<select class="form-control" id="comercial"  name="comercial" required>
+								<option disabled selected value> Selecciona una Opción </option>
+								<option value = "0">No Recomendado</option>
+								<option value = "1">Recomendado</option>
+								<option value = "2">Altamente Recomendado</option>
+
+							</select>
 						  </div>
 						  <div class="col-sm">
-							<label for="digi">DIGI-SC</label>
-							<input type="number" class="form-control" id="digi" name="digi" required>
+							<label for="digi">¿Es Recomendado para Área de DIGI-SC?</label>
+							<select class="form-control" id="digi"  name="digi" required>
+								<option disabled selected value> Selecciona una Opción </option>
+								<option value = "0">No Recomendado</option>
+								<option value = "1">Recomendado</option>
+								<option value = "2">Altamente Recomendado</option>
+
+							</select>
 						</div>
 					  </div>
 					  
 					  <br>
 					  <div class="form-group row">
 							<div class="col-sm">
-								<label for="resto">Resto-Soft</label>
-								<input type="number" class="form-control" id="resto" name="resto" required>
+								<label for="resto">Resultado en Resto-Soft</label>
+								<select class="form-control" id="resto"  name="resto" required>
+									<option disabled selected value> Selecciona una Opción </option>
+									<option value = "0">No Recomendado</option>
+									<option value = "1">Recomendado</option>
+									<option value = "2">Altamente Recomendado</option>
+								</select>
 							  </div>
 							  <div class="col-sm">
-								<label for="grupal1">Actividad Grupal 1</label>
-								<input type="number" class="form-control" id="grupal1" name="grupal1" required>
+								<label for="grupal1">Resultado en Actividad Grupal 1</label>
+								<select class="form-control" id="grupal1"  name="grupal1" required>
+									<option disabled selected value> Selecciona una Opción </option>
+									<option value = "0">0</option>
+									<option value = "1">1</option>
+									<option value = "2">2</option>
+									<option value = "3">3</option>
+									<option value = "4">4</option>
+									<option value = "5">5</option>
+								</select>
 							  </div>
 							  <div class="col-sm">
-								<label for="aptoag">Apto AG</label>
-								<input type="number" class="form-control" id="aptoag" name="aptoag" required>
+								<label for="aptoag">¿Es Apto AG?</label>
+								<select class="form-control" id="aptoag"  name="aptoag" required>
+									<option disabled selected value> Selecciona una Opción </option>
+									<option value = "0">No es Apto</option>
+									<option value = "1">Apto</option>
+								</select>
 							  </div>
 							  <div class="col-sm">
-								<label for="ingles">Ingles</label>
-								<input type="number" class="form-control" id="ingles" name="ingles" required>
+								<label for="ingles">Nivel de Inglés</label>
+								<select class="form-control" id="ingles"  name="ingles" required>
+									<option disabled selected value> Selecciona una Opción </option>
+									<option value = "0">Sin Conocimientos en Inglés</option>
+									<option value = "1">A1</option>
+									<option value = "2">A2</option>
+									<option value = "3">B1</option>
+									<option value = "4">B2</option>
+									<option value = "5">C1</option>
+									<option value = "6">C2</option>
+								</select>
 							  </div>
 						  </div>
 						  <br>
 						  <div class="form-group  row">
 						  <div class="col-sm">
-							<label for="apto">Apto</label>
-							<input type="number" class="form-control" id="apto" name="apto" required>
+							<label for="apto">¿Es Apto?</label>
+							<select class="form-control" id="apto"  name="apto" required>
+								<option disabled selected value> Selecciona una Opción </option>
+								<option value = "0">No Apto</option>
+								<option value = "1">Apto</option>
+							</select>
 						  </div>
 						  <div class="col-sm">
-							<label for="destacado">Destacado</label>
-							<input type="number" class="form-control" id="destacado" name="destacado" required>
+							<label for="destacado">¿Es Destacado?</label>
+							<select class="form-control" id="destacado"  name="destacado" required>
+								<option disabled selected value> Selecciona una Opción </option>
+								<option value = "0">No Destacado</option>
+								<option value = "1">Destacado</option>
+							</select>
 						  </div>
 						  <div class="col-sm">
-							<label for="destacado_pym">Destacado Pym</label>
-							<input type="number" class="form-control" id="destacado_pym" name="destacado_pym" required>
+							<label for="destacado_pym">¿Es Destacado en Pymetrics?</label>
+							<select class="form-control" id="destacado_pym"  name="destacado_pym" required>
+								<option disabled selected value> Selecciona una Opción </option>
+								<option value = "0">No Destacado</option>
+								<option value = "1">Destacado</option>
+							</select>
 						  </div>
 					  </div>
 					  <br>
 					  <div class="form-group">
-						<input class="btn btn-primary" type="submit" value="Result">
+						<input class="btn btn-primary" type="submit" value="Procesar">
 					  </div>
 					  
 					  <!--Prediction Result-->
 					  <div id ="result">
-							<strong style="color:red">{{result}}</strong>
+							<strong style="color:blue">{{result}}</strong>
 					 </div>
 				     </div>
 			 </fieldset>
