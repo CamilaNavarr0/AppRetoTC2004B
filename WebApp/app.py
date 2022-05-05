@@ -45,7 +45,7 @@ def predict():
     # Check the output values and retrive the result with html tag based on the value
     if output == 1:
         return render_template('SeleccionPersonal.html', 
-                               result = 'Apto para ser contratado')
+                               result = 'Destacado para ser contratado')
     else:
         return render_template('SeleccionPersonal.html', 
                                result = 'No apto para ser contratado')
