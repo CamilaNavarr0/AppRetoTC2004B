@@ -2,18 +2,32 @@
 
 import numpy as np
 import pickle
-from flask import Flask, request, render_template
+import os
+from flask import Flask, request, render_template, send_from_directory
+
 
 # Load ML model
-model = pickle.load(open('/Users/alejandromurcia/Documents/App_Reto/WebApp/SVM.pkl','rb')) 
+model = pickle.load(open('SVM.pkl','rb')) 
 
 # Create application
 app = Flask(__name__)
+
 
 # Bind home function to URL
 @app.route('/')
 def home():
     return render_template('SeleccionPersonal.html')
+
+@app.route('/about')
+def stanford_page():
+    return render_template('_about.html')
+
+# Icon
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static'),
+                               'favicon.ico', mimetype='image/vnd.microsoft.icon')
+
 
 # Bind predict function to URL
 @app.route('/predict', methods =['POST'])
