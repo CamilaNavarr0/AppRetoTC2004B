@@ -35,6 +35,18 @@ def predict():
     
     # Put all form entries values in a list 
     features = [float(i) for i in request.form.values()]
+    last_feature = features[-1]
+    features.pop()
+    if((features[2]==1.0 and features[3]==1.0 and features[4]==1.0 and features[5]==1.0) or (features[5]==2.0)):
+        features.append(1.0)
+    else:
+        features.append(0.0)
+    if(features[2]==2.0 and features[3]==2.0 and features[4]==2.0 and features[5]==2.0):
+        features.append(1.0)
+    else:
+        features.append(0.0)
+    features.append(last_feature)
+
     # Convert features to array
     array_features = [np.array(features)]
     # Predict features
@@ -45,7 +57,7 @@ def predict():
     # Check the output values and retrive the result with html tag based on the value
     if output == 1:
         return render_template('SeleccionPersonal.html', 
-                               result = 'Destacado para ser contratado')
+                               result = 'Se recomienda contratar por ser destacado')
     else:
         return render_template('SeleccionPersonal.html', 
                                result = 'No apto para ser contratado')
